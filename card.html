@@ -1,0 +1,154 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title> Card </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link href="/css/default.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/js/cards.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">//<![CDATA[
+
+    var deck, hand, discards;
+
+    window.onload = init;
+
+    function init() {
+
+        deck     = new Stack();
+        hand     = new Stack();
+        discards = new Stack();
+
+        deck.makeDeck(1);
+        display();
+    }
+
+    function shuffle() {
+
+        if (deck == null) return;
+        deck.shuffle(1);
+        display();
+    }
+
+    function deal() {
+        var i;
+        if (deck == null) return;
+        if (deck.cardCount() < 10)
+            alert("Not enough cards.");
+        else {
+            //discard();
+            for (i = 0; i < 1; i++)
+                hand.addCard(deck.deal());
+        }
+        display();
+    }
+
+    function discard() {
+
+        if (deck == null) return;
+        discards.combine(hand);
+        display();
+    }
+
+    function setupPlayer() {
+       alert('hello');
+
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    function reset() {
+        if (deck == null) return;
+        discards.combine(hand);
+        deck.combine(discards);
+        display();
+    }
+
+    function display() {
+
+        var s;
+
+        s = ""
+        for (i = 0; i < deck.cardCount(); i++)
+            s += deck.cards[i] + "\n";
+        document.forms[0].elements[0].value = s;
+
+        s = "";
+        for (i = 0; i < hand.cardCount(); i++)
+            s += hand.cards[i] + "\n";
+                    if(document.forms[0].elements[1].value.length <= document.forms[0].elements[2].value.length){
+                        document.forms[0].elements[1].value = s;
+                    }else{
+                        document.forms[0].elements[2].value = s;
+
+                    }
+        s = "";
+        for (i = 0; i < discards.cardCount(); i++)
+            s += discards.cards[i] + "\n";
+        document.forms[0].elements[3].value = s;
+    }
+
+    //]]></script>
+</head>
+<body style="background-color: #45a173">
+<div class="container" style="margin-top: 10px">
+    <a href="" onclick="shuffle();return false;"> <button type="button" class="btn btn-info bottom" onclick="show()"> Shuffle Card </button></a>
+    |
+    <a href="" onclick="deal();return false;">
+        <button type="button" class="btn btn-danger bottom" onclick="show()">Deal Card  </button>
+    </a>
+    |
+    <a href="" onclick="discard();return false;">
+        <button type="button" class="btn btn-info bottom" onclick="show()">Discard</button>
+    </a>
+    |
+    <a href="" onclick="reset();return false;">
+        <button type="button" class="btn btn-info bottom" onclick="setupPlayer()">Setup Player </button></a>
+
+    |
+    <a href="" onclick="reset();return false;">
+        <button type="button" class="btn btn-info bottom" onclick="show()"> Reset Deck</button></a>
+    <br/>
+</div>
+<div class="container-fluid" style="margin-top: 20px">
+    <form action="" onsubmit="return false;">
+        <div style="float:left;margin-right:1em;">
+            <b>Deck:</b><br />
+            <textarea rows="40" cols="20" class="form-control"></textarea>
+        </div>
+        <div style="float:left;margin-right:1em;">
+            <b>Hand:</b><br />
+            <textarea rows="10" cols="20" class="form-control" ></textarea>
+        </div>
+        <div style="float:left;">
+            <b> Player :</b><br />
+            <textarea rows="10" cols="20" class="form-control"></textarea>
+        </div>
+        <div style="float:left;">
+            <b>Discards :</b><br />
+            <textarea rows="10" cols="20" class="form-control"></textarea>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

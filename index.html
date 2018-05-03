@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pocker </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #45a173">
+<div class="container">
+    <br/>
+    <button type="button" class="btn btn-info bottom" onclick="show()"> Shuffle Card </button>
+    <button type="button" class="btn btn-danger bottom" onclick="show()"> Play Now  </button>
+    <button type="button" class="btn btn-info bottom" onclick="show()"> Shuffle Card </button>
+    <button type="button" class="btn btn-info bottom" onclick="show()"> Shuffle Card </button>
+    <br/>
+    <div id="card"></div>
+</div>
+
+
+<script>
+    function show() {
+
+        var cardWeights = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+        var cardTypes = ["Spades", "Hearts", "Diamonds", "Clubs"];
+        var cards = new Array();
+
+        function card(cardType, weight) {
+            this.cardType = cardType;
+            this.weight = weight;
+        };
+        function CreateDeck() {
+            cardTypes.forEach(function (weight) {
+                cardWeights.forEach(function (type) {
+                    cards.push(new card(type, weight));
+                });
+            });
+        };
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function shuffleDeck(shuffleCnt) {
+            for(var i = 0; i < shuffleCnt; i++) {
+                var rndNo = getRandomInt(1, 52);
+                var card = cards[i];
+                cards[i] = cards[rndNo];
+                cards[rndNo] = card;
+            }
+        }
+        CreateDeck();
+        //console.log(cards);
+        shuffleDeck(getRandomInt(10, 25));
+        console.log(cards);
+
+            $('#card').append(cards);
+
+
+    }
+</script>
+
+</body>
+</html>

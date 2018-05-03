@@ -298,7 +298,6 @@ var Deck = (function () {
       var starttime = Date.now();
 
       e.preventDefault();
-
       // get start coordinates and start listening window events
       if (e.type === 'mousedown') {
         startPos.x = pos.x = e.clientX;
@@ -316,7 +315,6 @@ var Deck = (function () {
         // is not draggable, do nothing
         return;
       }
-
       // move card
       $el.style[transform] = translate(self.x + 'px', self.y + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '');
       $el.style.zIndex = maxZ++;
@@ -333,11 +331,9 @@ var Deck = (function () {
           pos.x = e.touches[0].clientX;
           pos.y = e.touches[0].clientY;
         }
-
         // move card
         $el.style[transform] = translate(Math.round(self.x + pos.x - startPos.x) + 'px', Math.round(self.y + pos.y - startPos.y) + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '');
       }
-
       function onMouseup(e) {
         if (isFlippable && Date.now() - starttime < 200) {
           // flip sides
@@ -354,7 +350,6 @@ var Deck = (function () {
           // is not draggable, do nothing
           return;
         }
-
         // set current position
         self.x = self.x + pos.x - startPos.x;
         self.y = self.y + pos.y - startPos.y;
