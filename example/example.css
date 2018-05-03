@@ -33,15 +33,44 @@ body {
   transform: translate3d(-50%, -50%, 0);
 }
 #topbar {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: #334d41;
+  width: 60%;
+  background-color:brown;
   padding: 0.25rem;
   text-align: center;
+  height: 90px;
+  -webkit-border-top-left-radius: 100px;
+  -webkit-border-top-right-radius: 100px;
+  -moz-border-radius-topleft: 100px;
+  -moz-border-radius-topright: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  align-content: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 1px solid white;
 }
 #topbar button {
+  background: none;
+  border: 1px solid #fff;
+  outline: none;
+  margin: 0.1rem;
+  padding: 0.7rem;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+
+}
+#topbar button:hover {
+  background-color: #fff;
+  color: #444;
+}
+#contai button {
   background: none;
   border: 1px solid #fff;
   outline: none;
@@ -52,10 +81,6 @@ body {
   line-height: 1;
   color: #fff;
   cursor: pointer;
-}
-#topbar button:hover {
-  background-color: #fff;
-  color: #444;
 }
 .message {
   position: fixed;

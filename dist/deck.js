@@ -521,6 +521,9 @@ var Deck = (function () {
     }
   };
 
+  var deal={
+    
+  };
   function plusminus(value) {
     var plusminus = Math.round(Math.random()) ? -1 : 1;
 
@@ -966,7 +969,7 @@ var Deck = (function () {
   }
   Deck.animationFrames = animationFrames;
   Deck.ease = ease;
-  Deck.modules = { bysuit: bysuit, fan: fan, intro: intro, poker: poker, shuffle: shuffle, sort: sort, flip: flip };
+  Deck.modules = { bysuit: bysuit, fan: fan, intro: intro, poker: poker, shuffle: shuffle, sort: sort, flip: flip ,deal: deal};
   Deck.Card = _card;
   Deck.prefix = prefix;
   Deck.translate = translate;

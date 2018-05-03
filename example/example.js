@@ -10,12 +10,15 @@ var translate = Deck.translate
 var $container = document.getElementById('container')
 var $topbar = document.getElementById('topbar')
 
-var $sort = document.createElement('button')
-var $shuffle = document.createElement('button')
-var $bysuit = document.createElement('button')
-var $fan = document.createElement('button')
-var $poker = document.createElement('button')
-var $flip = document.createElement('button')
+
+var $sort = document.createElement('button');$sort.classList.add("this-green")
+var $shuffle = document.createElement('button');$shuffle.classList.add("this-orange")
+var $bysuit = document.createElement('button');$bysuit.classList.add("this-blue")
+var $fan = document.createElement('button');$fan.classList.add("this-blue")
+var $poker = document.createElement('button');$poker.classList.add("this-blue")
+var $flip = document.createElement('button');$flip.classList.add("this-blue")
+var $deal = document.createElement('button');$deal.classList.add("this-white")
+var $create = document.createElement('button');$create.classList.add("this-white")
 
 $shuffle.textContent = 'Shuffle'
 $sort.textContent = 'Sort'
@@ -23,6 +26,9 @@ $bysuit.textContent = 'By suit'
 $fan.textContent = 'Fan'
 $poker.textContent = 'Poker'
 $flip.textContent = 'Flip'
+$create.textContent='Player'
+$deal.textContent='Deal'
+
 
 $topbar.appendChild($flip)
 $topbar.appendChild($shuffle)
@@ -30,7 +36,8 @@ $topbar.appendChild($bysuit)
 $topbar.appendChild($fan)
 $topbar.appendChild($poker)
 $topbar.appendChild($sort)
-
+$topbar.appendChild($create)
+$topbar.appendChild($deal)
 var deck = Deck()
 
 // easter eggs start
@@ -146,6 +153,10 @@ function addWinningCard ($deck, i, side) {
 }
 
 // easter eggs end
+
+$deal.addEventListener('click', function () {
+    deck.deal()
+})
 
 $shuffle.addEventListener('click', function () {
   deck.shuffle()
