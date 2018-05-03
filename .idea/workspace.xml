@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588a1baa-a842-44cc-b47e-cd44e78b243c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/card.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/deck.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/deck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/index.html" afterDir="false" />
+    <list default="true" id="588a1baa-a842-44cc-b47e-cd44e78b243c" name="Default" comment="new update">
+      <change afterPath="$PROJECT_DIR$/css/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/sihalive-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/cards.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="card.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+            <state relative-caret-position="-454">
+              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -117,16 +115,6 @@
               <item name="pocker" type="b2602c69:ProjectViewProjectNode" />
               <item name="pocker" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="pocker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pocker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="pocker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pocker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -168,19 +156,27 @@
       <workItem from="1525141063488" duration="11677000" />
       <workItem from="1525227288257" duration="13562000" />
       <workItem from="1525312778645" duration="1452000" />
-      <workItem from="1525319302879" duration="675000" />
+      <workItem from="1525319302879" duration="947000" />
     </task>
+    <task id="LOCAL-00001" summary="new f">
+      <created>1525320427968</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525320427968</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33999000" />
+    <option name="totallyTimeSpent" value="34271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20260416" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3299595" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.329718" />
       <window_info anchor="right" id="Database" order="3" />
@@ -233,6 +229,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new f" />
+    <MESSAGE value="new update" />
+    <option name="LAST_COMMIT_MESSAGE" value="new update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -440,8 +441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/card.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+        <state relative-caret-position="-454">
+          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
