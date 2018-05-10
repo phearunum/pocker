@@ -298,6 +298,7 @@ var Deck = (function () {
       var starttime = Date.now();
 
       e.preventDefault();
+
       // get start coordinates and start listening window events
       if (e.type === 'mousedown') {
         startPos.x = pos.x = e.clientX;
@@ -315,6 +316,7 @@ var Deck = (function () {
         // is not draggable, do nothing
         return;
       }
+
       // move card
       $el.style[transform] = translate(self.x + 'px', self.y + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '');
       $el.style.zIndex = maxZ++;
@@ -331,9 +333,11 @@ var Deck = (function () {
           pos.x = e.touches[0].clientX;
           pos.y = e.touches[0].clientY;
         }
+
         // move card
         $el.style[transform] = translate(Math.round(self.x + pos.x - startPos.x) + 'px', Math.round(self.y + pos.y - startPos.y) + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '');
       }
+
       function onMouseup(e) {
         if (isFlippable && Date.now() - starttime < 200) {
           // flip sides
@@ -350,6 +354,7 @@ var Deck = (function () {
           // is not draggable, do nothing
           return;
         }
+
         // set current position
         self.x = self.x + pos.x - startPos.x;
         self.y = self.y + pos.y - startPos.y;
@@ -521,9 +526,6 @@ var Deck = (function () {
     }
   };
 
-  var deal={
-    
-  };
   function plusminus(value) {
     var plusminus = Math.round(Math.random()) ? -1 : 1;
 
@@ -623,10 +625,10 @@ var Deck = (function () {
 
         cards.slice(-5).reverse().forEach(function (card, i) {
           card.poker(i, len, function (i) {
-            card.setSide('front');
-            if (i === 4) {
-              next();
-            }
+            // card.setSide('front');
+            // if (i === 4) {
+              // next();
+            // }
           });
         });
       }
@@ -921,7 +923,7 @@ var Deck = (function () {
 
   function Deck(jokers) {
     // init cards array
-    var cards = new Array(jokers ? 55 : 52);
+    var cards = new Array(jokers ? 54 : 52);
 
     var $el = createElement('div');
     var self = observable({ mount: mount, unmount: unmount, cards: cards, $el: $el });
@@ -945,6 +947,7 @@ var Deck = (function () {
 
     // create cards
     for (var i = cards.length; i; i--) {
+		
       card = cards[i - 1] = _card(i - 1);
       card.setSide('back');
       card.mount($el);
@@ -969,7 +972,7 @@ var Deck = (function () {
   }
   Deck.animationFrames = animationFrames;
   Deck.ease = ease;
-  Deck.modules = { bysuit: bysuit, fan: fan, intro: intro, poker: poker, shuffle: shuffle, sort: sort, flip: flip ,deal: deal};
+  Deck.modules = { bysuit: bysuit, fan: fan, intro: intro, poker: poker, shuffle: shuffle, sort: sort, flip: flip };
   Deck.Card = _card;
   Deck.prefix = prefix;
   Deck.translate = translate;

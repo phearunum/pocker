@@ -24,8 +24,10 @@ body {
 }
 #container {
   position: fixed;
-  top: calc(50% + 1.5rem);
-  left: 50%;
+  /* top: calc(50% + 1.5rem); */
+  /* left: 50%; */
+  left :95%;
+  top :8%;
   -webkit-transform: translate3d(-50%, -50%, 0);
   -moz-transform: translate3d(-50%, -50%, 0);
   -o-transform: translate3d(-50%, -50%, 0);
